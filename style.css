@@ -1,0 +1,124 @@
+/* Studio legal/landing pages — monochrome, mirrors the app design language. */
+
+:root {
+  --bg: #ffffff;
+  --ink: #0a0a0a;
+  --muted: #6b6b6b;
+  --rule: #e5e5e5;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #000000;
+    --ink: #f5f5f5;
+    --muted: #9a9a9a;
+    --rule: #222222;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: 'Archivo', system-ui, -apple-system, sans-serif;
+  font-size: 17px;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+
+main {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 72px 24px 96px;
+}
+
+.kicker {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin: 0 0 16px;
+}
+
+h1 {
+  font-family: 'Bricolage Grotesque', sans-serif;
+  font-weight: 800;
+  font-size: 44px;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  margin: 0 0 12px;
+}
+
+h2 {
+  font-family: 'Bricolage Grotesque', sans-serif;
+  font-weight: 800;
+  font-size: 22px;
+  letter-spacing: -0.01em;
+  margin: 44px 0 8px;
+}
+
+p, li {
+  color: var(--ink);
+}
+
+.meta {
+  color: var(--muted);
+  font-size: 15px;
+  margin: 0 0 40px;
+}
+
+a {
+  color: inherit;
+  text-underline-offset: 3px;
+}
+
+hr {
+  border: 0;
+  border-top: 1px solid var(--rule);
+  margin: 48px 0;
+}
+
+footer {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+footer a {
+  color: var(--muted);
+}
+
+/* Landing page app cards */
+.app {
+  border: 1px solid var(--rule);
+  border-radius: 20px;
+  padding: 24px 28px;
+  margin: 16px 0;
+}
+
+.app h2 {
+  margin: 0 0 4px;
+}
+
+.app p {
+  margin: 0 0 14px;
+  color: var(--muted);
+}
+
+.app nav {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.app nav a {
+  margin-right: 20px;
+}
