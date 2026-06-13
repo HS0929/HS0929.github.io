@@ -3,32 +3,131 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Jason — Apps</title>
-  <meta name="description" content="Small, focused iOS apps. No accounts, no clutter." />
+  <title>Focused iOS apps — Indie iOS Studio</title>
+  <meta name="description" content="Focused iOS apps that do one job, correctly. No accounts, no feeds, no bank logins — your data never leaves your phone." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500&family=Bricolage+Grotesque:wght@800&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600&family=Bricolage+Grotesque:wght@700;800&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="/style.css" />
 </head>
 <body>
-  <main>
-    <p class="kicker">Indie iOS Studio</p>
-    <h1>Small, focused apps.</h1>
-    <p class="meta">One job each, done correctly. No accounts, no feeds, no clutter.</p>
-
-    <div class="app">
-      <h2>Billist</h2>
-      <p>Offline bill due-date tracker. Real recurrence, local reminders, and your data never leaves the phone — it never asks for a bank login.</p>
+  <!-- ============ TOP BAR ============ -->
+  <header>
+    <div class="wrap bar">
+      <div class="brand"><span class="dot"></span> <span class="brand-tag">Indie iOS Studio</span></div>
       <nav>
-        <a href="/billist/privacy/">Privacy</a>
-        <a href="/billist/terms/">Terms</a>
+        <a href="#apps">Apps</a>
+        <a href="#about">Principles</a>
+        <a href="mailto:egodev.support@gmail.com">Contact</a>
       </nav>
     </div>
+  </header>
 
-    <hr />
-    <footer>
-      <a href="mailto:egodev.support@gmail.com">egodev.support@gmail.com</a>
-    </footer>
+  <main class="wrap">
+    <!-- ============ HERO ============ -->
+    <section class="hero">
+      <p class="kicker">Indie iOS Studio</p>
+      <h1>Focused apps that do<br><span class="grad">one job, correctly.</span></h1>
+      <p class="lede">No accounts. No feeds. No bank logins. Each app does a single thing the right way — and your data never leaves your phone.</p>
+      <div class="cta">
+        <a class="btn btn-primary" href="#apps">See the apps →</a>
+        <a class="btn btn-ghost" href="#about">What we stand for</a>
+      </div>
+
+      <!-- principles strip -->
+      <div class="tenets" id="about">
+        <div class="tenet">
+          <div class="n">01 — Offline-first</div>
+          <p><b>Your data stays local.</b> Everything lives in a database on your device. Nothing to sync, nothing to leak.</p>
+        </div>
+        <div class="tenet">
+          <div class="n">02 — No accounts</div>
+          <p><b>Open it and go.</b> No sign-up, no email, no password. The app works the second you install it.</p>
+        </div>
+        <div class="tenet">
+          <div class="n">03 — Correct by design</div>
+          <p><b>The details are the product.</b> Recurrence, dates, time zones — handled properly, never faked.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ APPS ============ -->
+    <section class="sec" id="apps">
+      <p class="sec-label">The apps · 01</p>
+      <h2>Billist</h2>
+      <div style="height:28px"></div>
+
+      <div class="app">
+        <div class="app-copy">
+          <div class="app-head">
+            <img src="assets/billist-icon.png" alt="Billist app icon" />
+            <div>
+              <h3>Billist</h3>
+              <div class="tag">Offline bill tracker · iOS</div>
+            </div>
+          </div>
+          <p class="pitch">A bill tracker that keeps every due date right. No bank login, no accounts — just accurate recurring dates and reminders before each bill is due. Everything stays on your phone.</p>
+          <div class="features">
+            <div class="feature"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span>Real recurrence</span></div>
+            <div class="feature"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span>Local reminders</span></div>
+            <div class="feature"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span>No bank login</span></div>
+            <div class="feature"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span>Home-screen widget</span></div>
+          </div>
+          <div class="app-links">
+            <a class="store" href="#" aria-label="Download Billist on the App Store">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16.36 12.6c-.02-2.3 1.88-3.4 1.96-3.46-1.07-1.56-2.74-1.78-3.33-1.8-1.42-.14-2.77.83-3.49.83-.72 0-1.83-.81-3.01-.79-1.55.02-2.98.9-3.78 2.29-1.61 2.8-.41 6.94 1.16 9.21.77 1.11 1.68 2.36 2.87 2.31 1.15-.05 1.59-.74 2.98-.74 1.39 0 1.78.74 3 .72 1.24-.02 2.02-1.13 2.78-2.25.88-1.29 1.24-2.54 1.26-2.6-.03-.01-2.42-.93-2.43-3.69zM14.1 5.8c.64-.77 1.07-1.85.95-2.92-.92.04-2.03.61-2.69 1.38-.59.68-1.11 1.78-.97 2.83 1.03.08 2.08-.52 2.71-1.29z"/></svg>
+              <span class="txt"><span class="sub">Download on the</span><span class="big">App Store</span></span>
+            </a>
+          </div>
+        </div>
+
+        <!-- phone mock -->
+        <div class="phone">
+          <div class="screen">
+            <div class="scr-label">Upcoming</div>
+            <div class="stathero">
+              <div class="lab">Due this week</div>
+              <div class="num">$248</div>
+              <div class="cap">across 3 bills →</div>
+            </div>
+            <div class="billrow due">
+              <div><div class="nm">Rent</div><div class="dt">Due tomorrow</div></div>
+              <div class="amt">$1,450</div>
+            </div>
+            <div class="billrow">
+              <div><div class="nm">Electric</div><div class="dt">In 4 days</div></div>
+              <div class="amt">~$96</div>
+            </div>
+            <div class="billrow">
+              <div><div class="nm">Spotify</div><div class="dt">In 6 days</div></div>
+              <div class="amt">$11.99</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- more apps placeholder -->
+      <div class="coming">
+        <div>
+          <div class="t">More apps, same promise.</div>
+          <div class="s">Each one small, offline, and correct. New releases land here.</div>
+        </div>
+        <div class="mono">Coming soon</div>
+      </div>
+    </section>
   </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer>
+    <div class="wrap foot">
+      <div class="brand"><span class="dot"></span> <span class="brand-tag">Indie iOS Studio</span></div>
+      <nav class="mono foot-nav">
+        <a href="/billist/privacy/">Privacy</a>
+        <a href="/billist/terms/">Terms</a>
+        <a href="mailto:egodev.support@gmail.com">Contact</a>
+      </nav>
+      <div class="mono">© 2026 · Built in public</div>
+    </div>
+  </footer>
 </body>
 </html>
