@@ -182,16 +182,73 @@ header {
 .billrow .amt { font-family: 'Bricolage Grotesque'; font-weight: 800; font-size: 17px; }
 .billrow.due .dt { color: #ffd42a; }
 
-/* ---------- Payfin payoff-ring mock ---------- */
-.ring-box { position: relative; width: 184px; height: 184px; margin: 6px auto 4px; }
-.ring-box svg { width: 100%; height: 100%; transform: rotate(-90deg); }
-.ring-center { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; }
-.ring-center .rl { font-family: 'IBM Plex Mono'; font-size: 8px; letter-spacing: .14em; text-transform: uppercase; color: #97979f; }
-.ring-center .rn { font-family: 'Bricolage Grotesque'; font-weight: 800; font-size: 34px; line-height: 1; margin-top: 4px; letter-spacing: -.02em; }
-.ring-center .rp { font-family: 'IBM Plex Mono'; font-size: 8.5px; letter-spacing: .1em; text-transform: uppercase; color: #35d96b; margin-top: 6px; }
-.freedate { width: 100%; border-radius: 14px; padding: 12px 14px; background: #161618; display: flex; align-items: center; justify-content: space-between; }
-.freedate .k { font-family: 'IBM Plex Mono'; font-size: 9px; letter-spacing: .12em; text-transform: uppercase; color: #97979f; }
-.freedate .v { font-family: 'Bricolage Grotesque'; font-weight: 800; font-size: 16px; background: linear-gradient(100deg, #35d96b, #27c8e8); -webkit-background-clip: text; background-clip: text; color: transparent; }
+/* ============================================================
+   Payfin showcase — its OWN brand skin (green→cyan accent,
+   Manrope display / Inter body), scoped under .pf so it never
+   touches the studio/Billist look.
+   ============================================================ */
+.app.pf { --pf-accent: #35D96B; --pf-accent-2: #27C8E8; }
+.app.pf::before {
+  background: radial-gradient(120% 80% at 100% 0%, color-mix(in srgb, var(--pf-accent) 15%, transparent), transparent 55%);
+}
+.pf-h2, .app.pf .app-head h3 {
+  font-family: 'Manrope', sans-serif; font-weight: 800; letter-spacing: -0.02em;
+}
+.app.pf .pitch { font-family: 'Inter', system-ui, sans-serif; }
+.app.pf .feature svg { color: var(--pf-accent); }
+
+/* ---- phone screen: mesh hero ---- */
+.pf-screen { padding: 0; position: relative; background: #000; font-family: 'Inter', system-ui, sans-serif; }
+.pf-mesh {
+  position: absolute; left: 0; right: 0; top: 0; height: 47%; pointer-events: none;
+  background:
+    radial-gradient(120% 85% at 74% -15%, rgba(39,200,232,.42), transparent 58%),
+    linear-gradient(180deg, rgba(53,217,107,.52) 0%, rgba(53,217,107,.14) 44%, transparent 88%);
+}
+.pf-body { position: relative; z-index: 1; height: 100%; padding: 22px 17px 18px; display: flex; flex-direction: column; gap: 12px; }
+
+/* ---- top bar ---- */
+.pf-top { display: flex; align-items: center; justify-content: space-between; }
+.pf-brand { display: flex; align-items: center; gap: 9px; font-family: 'Manrope', sans-serif; font-weight: 800; font-size: 16px; letter-spacing: -.01em; color: #fff; }
+.pf-fin { width: 24px; height: 24px; border-radius: 7px; background: #000; display: grid; place-items: center; box-shadow: 0 2px 8px rgba(0,0,0,.45); padding: 1px; }
+.pf-fin svg { width: 100%; height: 100%; display: block; }
+.pf-date { font-family: 'IBM Plex Mono', monospace; font-size: 9px; letter-spacing: .14em; text-transform: uppercase; color: rgba(255,255,255,.72); }
+
+/* ---- payoff ring ---- */
+.pf-ringwrap { position: relative; width: 184px; height: 184px; margin: 2px auto 0; display: grid; place-items: center; }
+.pf-ringwrap svg { position: absolute; inset: 0; width: 100%; height: 100%; }
+.pf-ringc { text-align: center; z-index: 2; }
+.pf-ringc .rl { font-family: 'IBM Plex Mono', monospace; font-size: 8px; letter-spacing: .14em; text-transform: uppercase; color: #9aa0a6; }
+.pf-ringc .rn { font-family: 'Manrope', sans-serif; font-weight: 800; font-size: 34px; line-height: 1.04; margin-top: 3px; letter-spacing: -.02em; color: #fff; }
+.pf-ringsub { text-align: center; font-family: 'Inter', sans-serif; font-size: 11.5px; font-weight: 600; color: #35D96B; }
+
+/* ---- glass cards (chart + stats) ---- */
+.pf-chart, .pf-stat {
+  background: rgba(255,255,255,.05); border: 1px solid rgba(255,255,255,.08);
+  border-radius: 16px;
+}
+.pf-chart { padding: 11px 12px 9px; }
+.pf-chart-h { display: flex; align-items: center; justify-content: space-between; margin-bottom: 7px; }
+.pf-chart-h .k { font-family: 'IBM Plex Mono', monospace; font-size: 8px; letter-spacing: .12em; text-transform: uppercase; color: #9aa0a6; }
+.pf-chart-h .v { font-family: 'Manrope', sans-serif; font-weight: 800; font-size: 12px; color: #35D96B; }
+.pf-chart svg { width: 100%; height: 54px; display: block; }
+.pf-chart-x { display: flex; justify-content: space-between; margin-top: 5px; }
+.pf-chart-x span { font-family: 'IBM Plex Mono', monospace; font-size: 7px; letter-spacing: .08em; text-transform: uppercase; color: #6e747a; }
+
+/* ---- 3-up stat row ---- */
+.pf-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
+.pf-stat { padding: 10px 9px; }
+.pf-stat .k { font-family: 'IBM Plex Mono', monospace; font-size: 7.5px; letter-spacing: .1em; text-transform: uppercase; color: #9aa0a6; }
+.pf-stat .v { font-family: 'Manrope', sans-serif; font-weight: 800; font-size: 16px; color: #fff; margin-top: 4px; letter-spacing: -.01em; }
+
+/* ---- FAB ---- */
+.pf-fab {
+  position: absolute; right: 15px; bottom: 15px; width: 44px; height: 44px; border-radius: 50%;
+  border: none; cursor: default; color: #06140A; display: grid; place-items: center; z-index: 3;
+  background: linear-gradient(150deg, #35D96B, #27C8E8);
+  box-shadow: 0 12px 26px rgba(53,217,107,.45), inset 0 1px 0 rgba(255,255,255,.4);
+}
+.pf-fab svg { width: 22px; height: 22px; }
 
 /* ---------- More coming ---------- */
 .coming {

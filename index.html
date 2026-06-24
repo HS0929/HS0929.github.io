@@ -7,7 +7,7 @@
   <meta name="description" content="Focused iOS apps that do one job, correctly. No accounts, no feeds, no bank logins — your data never leaves your phone." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600&family=Bricolage+Grotesque:wght@700;800&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600&family=Bricolage+Grotesque:wght@700;800&family=Manrope:wght@500;700;800&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="/style.css" />
 </head>
 <body>
@@ -108,10 +108,10 @@
 
       <div style="height:72px"></div>
       <p class="sec-label">The apps · 02</p>
-      <h2>Payfin</h2>
+      <h2 class="pf-h2">Payfin</h2>
       <div style="height:28px"></div>
 
-      <div class="app">
+      <div class="app pf">
         <div class="app-copy">
           <div class="app-head">
             <img src="assets/payfin-icon.png" alt="Payfin app icon" />
@@ -120,11 +120,11 @@
               <div class="tag">Debt-payoff tracker · iOS</div>
             </div>
           </div>
-          <p class="pitch">Several debts, one clear number and a real plan. Log a payment and watch your balance shrink toward a projected debt-free date — using the avalanche (highest APR first) or snowball (smallest balance first) method. No bank login, no accounts; everything stays on your phone.</p>
+          <p class="pitch">Several debts become one clear number and a real plan. Log a payment, watch the payoff ring fill, and see your balance burn down to a projected debt-free date — using the avalanche (highest APR first) or snowball (smallest balance first) method. No bank login, no accounts; everything stays on your phone.</p>
           <div class="features">
             <div class="feature"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span>Avalanche &amp; snowball</span></div>
             <div class="feature"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span>Debt-free date</span></div>
-            <div class="feature"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span>Log payments</span></div>
+            <div class="feature"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span>Payoff projections</span></div>
             <div class="feature"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span>No bank login</span></div>
           </div>
           <div class="app-links">
@@ -135,38 +135,62 @@
           </div>
         </div>
 
-        <!-- phone mock -->
+        <!-- phone mock: Payfin Home — mesh hero + payoff ring + burndown -->
         <div class="phone">
-          <div class="screen payoff">
-            <div class="scr-label">Payoff</div>
-            <div class="ring-box">
-              <svg viewBox="0 0 200 200" aria-hidden="true">
-                <defs>
-                  <linearGradient id="pf" x1="0" y1="0" x2="1" y2="1">
-                    <stop offset="0" stop-color="#35d96b"/>
-                    <stop offset="1" stop-color="#27c8e8"/>
-                  </linearGradient>
-                </defs>
-                <circle cx="100" cy="100" r="80" fill="none" stroke="#1d1d1f" stroke-width="16"/>
-                <circle cx="100" cy="100" r="80" fill="none" stroke="url(#pf)" stroke-width="16" stroke-linecap="round" stroke-dasharray="191 503"/>
-              </svg>
-              <div class="ring-center">
-                <div class="rl">Remaining</div>
-                <div class="rn">$12,480</div>
-                <div class="rp">38% paid off</div>
+          <div class="screen pf-screen">
+            <div class="pf-mesh"></div>
+            <div class="pf-body">
+              <div class="pf-top">
+                <div class="pf-brand">
+                  <span class="pf-fin">
+                    <svg viewBox="0 0 512 512" aria-hidden="true"><defs><linearGradient id="finm" x1="0.15" y1="1" x2="0.85" y2="0.05"><stop offset="0" stop-color="#35D96B"/><stop offset="1" stop-color="#27C8E8"/></linearGradient></defs><path fill="url(#finm)" d="M 152 392 C 182 256 248 158 326 120 C 322 172 306 226 306 270 C 306 322 328 364 380 392 C 330 380 224 380 152 392 Z"/></svg>
+                  </span>
+                  Payfin
+                </div>
+                <div class="pf-date">Good evening</div>
               </div>
-            </div>
-            <div class="freedate">
-              <div class="k">Debt-free</div>
-              <div class="v">Aug 2027</div>
-            </div>
-            <div class="billrow due">
-              <div><div class="nm">Visa</div><div class="dt">22.9% APR · next</div></div>
-              <div class="amt">$4,210</div>
-            </div>
-            <div class="billrow">
-              <div><div class="nm">Car loan</div><div class="dt">6.4% APR</div></div>
-              <div class="amt">$8,270</div>
+
+              <div class="pf-ringwrap">
+                <svg viewBox="0 0 212 212" aria-hidden="true">
+                  <defs><linearGradient id="payg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#35D96B"/><stop offset="1" stop-color="#27C8E8"/></linearGradient></defs>
+                  <circle cx="106" cy="106" r="88" fill="none" stroke="rgba(255,255,255,.10)" stroke-width="14"/>
+                  <circle cx="106" cy="106" r="88" fill="none" stroke="url(#payg)" stroke-width="14" stroke-linecap="round" stroke-dasharray="553" stroke-dashoffset="343" transform="rotate(-90 106 106)">
+                    <animate attributeName="stroke-dashoffset" from="553" to="343" dur="1.3s" fill="freeze" calcMode="spline" keySplines="0.22 1 0.36 1" keyTimes="0;1"/>
+                  </circle>
+                </svg>
+                <div class="pf-ringc">
+                  <div class="rl">Remaining balance</div>
+                  <div class="rn">$12,480</div>
+                </div>
+              </div>
+              <div class="pf-ringsub">38% paid · debt-free Mar ’27</div>
+
+              <!-- burndown chart: balance falling to $0 at the debt-free date -->
+              <div class="pf-chart">
+                <div class="pf-chart-h"><span class="k">Projected balance</span><span class="v">→ $0</span></div>
+                <svg viewBox="0 0 240 96" preserveAspectRatio="none" aria-hidden="true">
+                  <defs>
+                    <linearGradient id="bdfill" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#35D96B" stop-opacity="0.38"/><stop offset="1" stop-color="#35D96B" stop-opacity="0"/></linearGradient>
+                    <linearGradient id="bdline" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#35D96B"/><stop offset="1" stop-color="#27C8E8"/></linearGradient>
+                  </defs>
+                  <path d="M3,16 C52,24 88,46 122,60 C156,74 196,82 233,86 L233,84 L3,84 Z" fill="url(#bdfill)"/>
+                  <path d="M3,16 C52,24 88,46 122,60 C156,74 196,82 233,86" fill="none" stroke="url(#bdline)" stroke-width="2.6" stroke-linecap="round"/>
+                  <line x1="3" y1="84" x2="233" y2="84" stroke="rgba(255,255,255,.12)" stroke-width="1"/>
+                  <line x1="233" y1="20" x2="233" y2="84" stroke="rgba(255,255,255,.28)" stroke-width="1" stroke-dasharray="3 3"/>
+                  <circle cx="233" cy="86" r="3.4" fill="#27C8E8"/>
+                </svg>
+                <div class="pf-chart-x"><span>Now</span><span>Debt-free Mar ’27</span></div>
+              </div>
+
+              <div class="pf-stats">
+                <div class="pf-stat"><div class="k">Paid off</div><div class="v">38%</div></div>
+                <div class="pf-stat"><div class="k">Extra / mo</div><div class="v">$200</div></div>
+                <div class="pf-stat"><div class="k">Months left</div><div class="v">31</div></div>
+              </div>
+
+              <button class="pf-fab" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>
+              </button>
             </div>
           </div>
         </div>
